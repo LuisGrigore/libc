@@ -11,7 +11,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		return NULL;
 	}
-	strncpy(substring, s + start, length);
+	ft_strncpy(substring, s + start, length);
     substring[length] = '\0';
 	return (substring);
 }
