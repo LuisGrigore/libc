@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdlib.h>
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -11,7 +10,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		return NULL;
 	}
-	ft_strncpy(substring, s + start, length);
-    substring[length] = '\0';
+	ft_strncpy(substring, s + start, len);
+    substring[len] = '\0';
 	return (substring);
 }

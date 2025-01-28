@@ -8,50 +8,49 @@ int is_end(char* str, char c);
 
 char **ft_split(char const *s, char c)
 {
-	char ** result;
-	int result_len;
-
-	result_len = 0;
-
-	char * str = s;
-	char * temp;
-	int res_i = 0;
 	int i = 0;
 	int j = 0;
-	int len = 0;
-
-	result_len = count_instances(str, c) + 1;
-
-	if(is_begin(str,c) == 1)
+	char str = s;
+	while(str[j] != '\0')
 	{
-		result_len --;
-	}
-	if(is_end(str,c) == 1)
-	{
-		result_len --;
-	}
-
-	printf("%d", result_len);
-
-	result = (char **) malloc(result_len * sizeof(char*));
-
-	while(str[i] != '\0')
-	{
-		if(str[i] == c)
+		if(str[j] == c)
 		{
-			result[res_i] = substr(str,j,i);
-			res_i ++;
-			j = i+1;
+			if(i != j)
+			{
+				//añadir string al arry
+				printf(substr(str,i,j-1));
+			}
+			i = j;
+			i++;
+			j++;
 		}
-		i++;
+		else
+		{
+			j++;
+		}
 
 	}
-	if(res_i < result_len)
-	{
-		result[res_i] = substr(str,j,i);
-	}
-	return result;
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 int is_begin(char* str, char c)
 {
