@@ -1,0 +1,4 @@
+int toupper(int c)
+{
+	
+}
