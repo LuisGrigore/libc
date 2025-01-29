@@ -20,18 +20,12 @@ char **ft_split(char const *s, char c)
 			{
 				if(str[j+1] == '\0')
 				{
-					printf("%s\n",substr(str,i,j+1));
-					printf("%d\n",res_size);
 					result = add_to_split_array(result,substr(str,i,j+1),res_size);
-					printf("%d",result);
 
 				}
 				else
 				{
-					printf("%s\n",substr(str,i,j));
-					printf("%d\n",res_size);
 					result = add_to_split_array(result,substr(str,i,j),res_size);
-					printf("%d",result);
 				}
 				res_size++;
 			}
@@ -45,6 +39,7 @@ char **ft_split(char const *s, char c)
 		}
 
 	}
+	return result;
 }
 
 
@@ -91,12 +86,32 @@ void *memmove(void *dest, const void *src, size_t n)
 	}
 	return dest;
 }
+void free_array(char ** array, int size)
+{
+	int i = 0;
+	while(i < size)
+	{
+		free(array[i]);
+	}
+	free(array);
+}
+void *ft_realloc(void *ptr, size_t new_size)
+{
+	void* new_ptr = malloc(new_size);
+	new_ptr = memmove(new_ptr,ptr,new_size);
+	free(ptr);
+	return new_ptr;
+}
 char **add_to_split_array(char ** src, char* str, int size)
 {
 	char **result;
-	result = (char **) malloc((size + 1) * sizeof(char *));
-	memmove(result,src, size);
-	result[size] = str;
-	free(src);
-	return result;
+	if(size == 0)
+	{
+		src = (char **) malloc(sizeof(char *));
+		src[0] = str;
+		return src;
+	}
+	src = ft_realloc(src, (size) * sizeof(char*));
+	src[size -1] = str;
+	return src;
 }
