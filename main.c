@@ -1,13 +1,17 @@
-#include "ft_split.c"
+#include "ft_split_copy.h"
 #include <stdio.h>
-#include <unistd.h>
 
 int main(int argc, char const *argv[])
 {
-	char *a = "Hola  que    tal ";
-	char ** b = ft_split(a, ' ');
-	//char * c = substr(a,1,4);
-	//printf("c: %s", b[0]);
-	write(1,b[2],4);
+	char *a = "   Hola  que    tal asfafa dfsdg sg    ";
+	char ** b = ft_split_copy(a, ' ');
+	int i = 0;
+	while (i< 6)
+	{
+		printf("c: %s\n", b[i]);
+		i++;
+	}
+	
+
 	return 0;
 }

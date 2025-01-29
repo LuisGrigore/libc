@@ -1,0 +1,1 @@
+char **ft_split_copy(char const *s, char c);
