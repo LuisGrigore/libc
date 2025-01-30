@@ -1,7 +1,6 @@
 #ifndef SPLIT_ARRAY_H
 #define SPLIT_ARRAY_H
 
-#include <stdio.h> 
 #include <stdlib.h> 
 
 struct SplitArray{

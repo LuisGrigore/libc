@@ -1,1 +1,5 @@
-char **ft_split_copy(char const *s, char c);
+#ifndef FT_SPLIT_H
+#define FT_SPLIT_H
+
+char	**ft_split_copy(char const *s, char c);
+#endif
