@@ -19,7 +19,7 @@ void *ft_realloc(void *ptr, size_t new_size)
     void *new_ptr;
 
 	new_ptr = malloc(new_size);
-	
+
     if (!new_ptr) {
         return NULL;
     }
@@ -46,7 +46,7 @@ void add_null_to_split_array(struct SplitArray *split_array)
     split_array->array = (char **) ft_realloc(split_array->array, (split_array->size + 1) * sizeof(char *));
     
     split_array->array[split_array->size] = NULL;
-	split_array->last = split_array->array[split_array->size];
+	split_array->last = &split_array->array[split_array->size];
 	split_array->size++;
 
 }

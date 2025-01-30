@@ -3,12 +3,10 @@
 
 char **ft_split_copy(char const *s, char c)
 {
-	char *str;
 	struct StringExtractor string_extractor;
 	struct SplitArray split_array;
 
-	str = s;
-	string_extractor = StringExtractor(str);
+	string_extractor = StringExtractor(s);
 	split_array = SplitArray();
 	
 	while(is_end(string_extractor) == 0)

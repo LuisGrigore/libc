@@ -1,6 +1,6 @@
 #include "string_extract.h"
 #include "libft.h"
-struct StringExtractor StringExtractor(char * str)
+struct StringExtractor StringExtractor(const char * str)
 {
     struct StringExtractor string_extractor;
     string_extractor.str = str;
@@ -9,7 +9,7 @@ struct StringExtractor StringExtractor(char * str)
     return string_extractor;
 }
 
-char *start_end_substr(char *str, unsigned int start, unsigned int end)
+char *start_end_substr(const char *str, unsigned int start, unsigned int end)
 {
     size_t len;
 
