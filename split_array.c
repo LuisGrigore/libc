@@ -1,9 +1,9 @@
 #include "split_array.h"
 #include "libft.h"
 
-void free_array(char **array, int size)
+void	free_array(char **array, int size)
 {
-	int i;
+	int	i;
 
 	i = 0;
 
@@ -14,9 +14,9 @@ void free_array(char **array, int size)
     free(array);
 }
 
-void *ft_realloc(void *ptr, size_t new_size)
+void	*ft_realloc(void *ptr, size_t new_size)
 {
-    void *new_ptr;
+    void	*new_ptr;
 
 	new_ptr = malloc(new_size);
 
@@ -25,10 +25,10 @@ void *ft_realloc(void *ptr, size_t new_size)
     }
     new_ptr = ft_memmove(new_ptr, ptr, new_size);
     free(ptr);
-    return new_ptr;
+    return (new_ptr);
 }
 
-struct SplitArray *add_to_split_array(struct SplitArray *split_array, char *str)
+struct	SplitArray *add_to_split_array(struct SplitArray *split_array, char *str)
 {
     if (split_array->array == NULL) {
         split_array->array = (char **) malloc(sizeof(char *));
@@ -38,10 +38,10 @@ struct SplitArray *add_to_split_array(struct SplitArray *split_array, char *str)
         split_array->array[split_array->size] = str;
     }
     split_array->size++;
-    return split_array;
+    return (split_array);
 }
 
-void add_null_to_split_array(struct SplitArray *split_array)
+void	add_null_to_split_array(struct SplitArray *split_array)
 {
     split_array->array = (char **) ft_realloc(split_array->array, (split_array->size + 1) * sizeof(char *));
     
@@ -51,10 +51,10 @@ void add_null_to_split_array(struct SplitArray *split_array)
 
 }
 
-struct SplitArray SplitArray()
+struct SplitArray	SplitArray()
 {
-    struct SplitArray split_array;
+    struct SplitArray	split_array;
     split_array.array = NULL;
     split_array.size = 0;
-    return split_array;
+    return (split_array);
 }
