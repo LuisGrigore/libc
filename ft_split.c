@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/30 17:48:28 by lgrigore          #+#    #+#             */
+/*   Updated: 2025/01/30 18:02:04 by lgrigore         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-struct SplitArray	*add_to_split_array(struct SplitArray *split_array, char* str);
+struct SplitArray	*add_to_split_array(struct SplitArray *split_array,
+				char *str);
 void	add_null_to_split_array(struct SplitArray *split_array);
 struct SplitArray	SplitArray();
 
