@@ -1,7 +1,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-char *substr(char *str, int start, int end);
+char *start_end_substr(char *str, int start, int end);
 char **add_to_split_array(char ** src, char* str, int size);
 
 char **ft_split(char const *s, char c)
@@ -20,12 +20,12 @@ char **ft_split(char const *s, char c)
 			{
 				if(str[j+1] == '\0')
 				{
-					result = add_to_split_array(result,substr(str,i,j+1),res_size);
+					result = add_to_split_array(result,start_end_substr(str,i,j+1),res_size);
 
 				}
 				else
 				{
-					result = add_to_split_array(result,substr(str,i,j),res_size);
+					result = add_to_split_array(result,start_end_substr(str,i,j),res_size);
 				}
 				res_size++;
 			}
@@ -44,7 +44,7 @@ char **ft_split(char const *s, char c)
 
 
 
-char *substr(char *str, int start, int end)
+char *start_end_substr(char *str, int start, int end)
 {
 	int size = end-start;
 	char *result = (char*) malloc(size + 1 * sizeof(char));
