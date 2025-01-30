@@ -4,7 +4,7 @@
 int main(int argc, char const *argv[])
 {
 	char *a = "   Hola  que    tal asfafa dfsdg sg    ";
-	char ** b = ft_split_copy(a, ' ');
+	char ** b = ft_split(a, ' ');
 	int i = 0;
 	while (i< 6)
 	{
