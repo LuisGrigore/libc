@@ -2,33 +2,23 @@
 #include "libft.h"
 struct StringExtractor StringExtractor(char * str)
 {
-    struct StringExtractor se;
-    se.str = str;
-    se.i = 0;
-    se.j = 0;
-    return se;
+    struct StringExtractor string_extractor;
+    string_extractor.str = str;
+    string_extractor.i = 0;
+    string_extractor.j = 0;
+    return string_extractor;
 }
 
-struct StringExtractor reset(struct StringExtractor se)
+char *start_end_substr(char *str, unsigned int start, unsigned int end)
 {
-    se.i = 0;
-    se.j = 0;
-    return se;
-}
-
-char *start_end_substr(char *str, int start, int end)
-{
-    unsigned int u_start;
     size_t len;
 
-	
-	u_start = (unsigned int)start;
 	len = (size_t)(end - start);
 
     if (str == NULL || start >= end) {
         return NULL;
     }
-    return ft_substr(str, u_start, len);
+    return ft_substr(str, start, len);
 }
 
 void trunc_regx(struct StringExtractor *se, char regx)

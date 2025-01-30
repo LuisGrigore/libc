@@ -1,13 +1,12 @@
 #include "split_array.h"
 #include "libft.h"
 
-
-
 void free_array(char **array, int size)
 {
 	int i;
 
 	i = 0;
+
     while (i < size) {
         free(array[i]);
 		i++;
@@ -17,7 +16,10 @@ void free_array(char **array, int size)
 
 void *ft_realloc(void *ptr, size_t new_size)
 {
-    void *new_ptr = malloc(new_size);
+    void *new_ptr;
+
+	new_ptr = malloc(new_size);
+	
     if (!new_ptr) {
         return NULL;
     }
@@ -51,8 +53,8 @@ void add_null_to_split_array(struct SplitArray *split_array)
 
 struct SplitArray SplitArray()
 {
-    struct SplitArray sa;
-    sa.array = NULL;
-    sa.size = 0;
-    return sa;
+    struct SplitArray split_array;
+    split_array.array = NULL;
+    split_array.size = 0;
+    return split_array;
 }
