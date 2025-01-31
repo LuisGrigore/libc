@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/31 13:10:10 by lgrigore          #+#    #+#             */
+/*   Updated: 2025/01/31 13:10:37 by lgrigore         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-	if(ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
+	if (ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
 	{
 		return (1);
 	}
