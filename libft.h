@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 13:26:13 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/01/31 14:04:12 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/01/31 14:34:24 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 int	ft_toupper(int c);
 int	ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
 /*
-ft_strrchr
-ft_strncmp
 ft_memchr
 ft_memcmp
 ft_strnstr
