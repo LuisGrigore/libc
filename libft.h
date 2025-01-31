@@ -3,6 +3,19 @@
 
 #include <stdlib.h>
 #include <fcntl.h>
+struct StringExtractor
+{
+	const char*	str;
+	unsigned int	i;
+	unsigned int	j;
+};
+
+struct					SplitArray
+{
+	char				**array;
+	size_t				size;
+	char				**last;
+};
 
 int ft_isalpha(int c);
 int ft_isdigit(int c);
