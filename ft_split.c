@@ -1,13 +1,23 @@
-#include "libft.h"
-#include "ft_split_copy.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/31 12:49:23 by lgrigore          #+#    #+#             */
+/*   Updated: 2025/01/31 13:05:53 by lgrigore         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "ft_split_copy.h"
+#include "libft.h"
 
 struct SplitArray		*add_to_split_array(struct SplitArray *split_array,
 							char *str);
 void					add_null_to_split_array(struct SplitArray *split_array);
 struct SplitArray		split_array_init(void);
 struct StringExtractor	string_extractor_init(const char *str);
-int						is_end(struct StringExtractor se);
 char					*extract(struct StringExtractor *se, char regx);
 
 // String extractor
@@ -21,21 +31,10 @@ struct StringExtractor	string_extractor_init(const char *str)
 	return (string_extractor);
 }
 
-char	*start_end_substr(const char *str, unsigned int start, unsigned int end)
-{
-	size_t	len;
-
-	len = (size_t)(end - start);
-	if (str == NULL || start >= end)
-	{
-		return (NULL);
-	}
-	return (ft_substr(str, start, len));
-}
-
 char	*extract(struct StringExtractor *se, char regx)
 {
 	char	*res;
+	size_t	len;
 
 	while (se->str[se->j] == regx && se->str[se->j] != '\0')
 	{
@@ -46,42 +45,12 @@ char	*extract(struct StringExtractor *se, char regx)
 	{
 		se->j++;
 	}
-	if (se->str[se->j] == '\0')
-	{
-		res = start_end_substr(se->str, se->i, se->j);
-	}
-	else
-	{
-		res = start_end_substr(se->str, se->i, se->j);
-	}
+	len = (size_t)(se->j - se->i);
+	res = ft_substr(se->str, se->i, len);
 	return (res);
 }
 
-int	is_end(struct StringExtractor se)
-{
-	if (se.str[se.j] == '\0')
-	{
-		return (1);
-	}
-	return (0);
-}
-
 // Split_Array
-
-void	free_array(char **array, int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
-	{
-		free(array[i]);
-		array[i] = NULL;
-		i++;
-	}
-	free(array);
-	array = NULL;
-}
 
 void	*ft_realloc(void *ptr, size_t new_size)
 {
@@ -116,43 +85,29 @@ struct SplitArray	*add_to_split_array(struct SplitArray *split_array,
 	return (split_array);
 }
 
-void	add_null_to_split_array(struct SplitArray *split_array)
-{
-	split_array->array = (char **)ft_realloc(split_array->array,
-			(split_array->size + 1) * sizeof(char *));
-	split_array->array[split_array->size] = NULL;
-	split_array->last = &split_array->array[split_array->size];
-	split_array->size++;
-}
-
-struct SplitArray	split_array_init(void)
-{
-	struct SplitArray	split_array;
-
-	split_array.array = NULL;
-	split_array.size = 0;
-	return (split_array);
-}
-
 // Split
 
 char	**ft_split(char const *s, char c)
 {
 	struct StringExtractor	se;
 	struct SplitArray		split_array;
+	char					*substring;
 
 	se = string_extractor_init(s);
-	split_array = split_array_init();
-	while (is_end(se) == 0)
+	split_array.array = NULL;
+	split_array.size = 0;
+	while (se.str[se.j] != '\0')
 	{
-		char *substring = extract(&se, c);
+		substring = extract(&se, c);
 		if (substring)
 		{
 			add_to_split_array(&split_array, substring);
 		}
 	}
-	add_null_to_split_array(&split_array);
-
+	split_array.array = (char **)ft_realloc(split_array.array,
+			(split_array.size + 1) * sizeof(char *));
+	split_array.array[split_array.size] = NULL;
+	split_array.last = &split_array.array[split_array.size];
+	split_array.size++;
 	return (split_array.array);
 }
-
