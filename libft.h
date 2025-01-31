@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 13:26:13 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/01/31 14:45:18 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/01/31 14:52:51 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
-void	*memchr(const void *s, int c, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
 /*
 ft_memcmp
 ft_strnstr
