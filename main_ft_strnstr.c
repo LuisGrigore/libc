@@ -39,7 +39,7 @@ int main() {
     len = 35;  // big tiene 35 caracteres, el límite de len es justo el tamaño de big
     printf("\nCaso 6: Subcadena está justo al final de los len caracteres\n");
     printf("Resultado esperado: en C\n");
-    printf("Resultado obtenido: %s\n", ft_strnstr(big, "en C", len));  // Esperado: "en C"
+	printf("Resultado obtenido: %s\n", ft_strnstr(big, "en C", len));  // Esperado: "en C"
 
     // Caso 7: little no se encuentra en big, con len suficiente
     len = 10;
