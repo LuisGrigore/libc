@@ -1,41 +1,37 @@
-#include "libft.h"
+/* main_ft_strncmp.c */
 #include <stdio.h>
+#include <string.h>
+#include "libft.h"
 
 int main() {
-    const char *str1 = "Hello, World!";
-    const char *str2 = "Hello, world!";
-    const char *str3 = "Hello, C!";
-    const char *str4 = "Hello, World!";
+    printf("Tests ft_strncmp:\n");
+    int test_fallido = 0;
     
-    // Comparar los primeros 5 caracteres de str1 y str2
-    int result1 = ft_strncmp(str1, str2, 5);
-    if (result1 == 0) {
-        printf("Los primeros 5 caracteres de str1 y str2 son iguales.\n");
-    } else if (result1 < 0) {
-        printf("Los primeros 5 caracteres de str1 son menores que los de str2.\n");
-    } else {
-        printf("Los primeros 5 caracteres de str1 son mayores que los de str2.\n");
+    struct {
+        const char *s1;
+        const char *s2;
+        size_t n;
+    } test_cases[] = {
+        {"Hola", "Hola", 4},
+        {"Hola", "Holi", 3},
+        {"abcdef", "abcdez", 5},
+        {"12345", "123", 5},
+        {"", "", 1},
+        {"abc", "abd", 2}
+    };
+    
+    for (int i = 0; i < 6; i++) {
+        int esperado = strncmp(test_cases[i].s1, test_cases[i].s2, test_cases[i].n);
+        int obtenido = ft_strncmp(test_cases[i].s1, test_cases[i].s2, test_cases[i].n);
+        printf("Caso %d Comparando \"%s\" y \"%s\" en los primeros %zu caracteres: ", 
+               i+1, test_cases[i].s1, test_cases[i].s2, test_cases[i].n);
+        if ((esperado == 0 && obtenido == 0) || (esperado < 0 && obtenido < 0) || (esperado > 0 && obtenido > 0)) {
+            printf("✔ PASA\n");
+        } else {
+            printf("✘ FALLA (Esperado: %d, Obtenido: %d)\n", esperado, obtenido);
+            if (test_fallido == 0) test_fallido = i+1;
+        }
     }
-
-    // Comparar los primeros 10 caracteres de str1 y str3
-    int result2 = ft_strncmp(str1, str3, 10);
-    if (result2 == 0) {
-        printf("Los primeros 10 caracteres de str1 y str3 son iguales.\n");
-    } else if (result2 < 0) {
-        printf("Los primeros 10 caracteres de str1 son menores que los de str3.\n");
-    } else {
-        printf("Los primeros 10 caracteres de str1 son mayores que los de str3.\n");
-    }
-
-    // Comparar los primeros 5 caracteres de str1 y str4 (deberían ser iguales)
-    int result3 = ft_strncmp(str1, str4, 5);
-    if (result3 == 0) {
-        printf("Los primeros 5 caracteres de str1 y str4 son iguales.\n");
-    } else if (result3 < 0) {
-        printf("Los primeros 5 caracteres de str1 son menores que los de str4.\n");
-    } else {
-        printf("Los primeros 5 caracteres de str1 son mayores que los de str4.\n");
-    }
-
-    return 0;
+    
+    return test_fallido;
 }
