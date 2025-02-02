@@ -11,7 +11,7 @@ int main() {
         int res_original = isprint(i);
         int res_mia = ft_isprint(i);
         printf("Caso %d Caracter '%c': ", i, i);
-        if (res_original == res_mia) {
+        if ((res_original != 0 && res_mia != 0) || (res_original == 0 && res_mia == 0)) {
             printf("✔ PASA\n");
         } else {
             printf("✘ FALLA (Esperado: %d, Obtenido: %d)\n", res_original, res_mia);

@@ -1,6 +1,7 @@
 /* main_ft_split.c */
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "libft.h"
 
 void print_split_result(char **result) {
