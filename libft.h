@@ -6,9 +6,11 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 13:26:13 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/02/02 11:56:19 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/02/02 12:24:20 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//TO DO: hacer que todas las funciones auxiliares sean static
 
 #ifndef LIBFT_H
 #define LIBFT_H
@@ -58,9 +60,9 @@ int	ft_atoi(const char *nptr);
 char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
-
-
 char	*ft_strtrim(char const *s1, char const *set);
+
+
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
