@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 13:13:38 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/01/31 13:15:20 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/02/02 12:46:24 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	else
 	{
 		i = 0;
-		while (i < n)
+		while ((size_t)i < n)
 		{
 			d[i] = s[i];
 			i++;
