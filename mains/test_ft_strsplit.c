@@ -1,8 +1,8 @@
 /* main_ft_split.c */
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "libft.h"
+#include <string.h>
 
 void print_split_result(char **result) {
     if (!result) {
@@ -35,27 +35,38 @@ int main() {
         char **obtenido = ft_split(test_cases[i].s, test_cases[i].c);
         printf("Caso %d Separando \"%s\" por '%c': ", i+1, test_cases[i].s, test_cases[i].c);
         
-        int j;
-        for (j = 0; test_cases[i].esperado[j] && obtenido[j]; j++) {
-            if (strcmp(test_cases[i].esperado[j], obtenido[j]) != 0) {
+        if (test_cases[i].s[0] == '\0') {
+            if (obtenido == NULL) {
+                printf("✔ PASA\n");
+            } else {
+                printf("✘ FALLA (Esperado: NULL, Obtenido: %p)\n", (void*)obtenido);
+                if (test_fallido == 0) test_fallido = i+1;
+            }
+        } else {
+            int j;
+            for (j = 0; test_cases[i].esperado[j] && obtenido[j]; j++) {
+                if (strcmp(test_cases[i].esperado[j], obtenido[j]) != 0) {
+                    printf("✘ FALLA\n");
+                    test_fallido = i+1;
+                    break;
+                }
+            }
+            
+            if (!test_cases[i].esperado[j] && !obtenido[j]) {
+                printf("✔ PASA\n");
+            } else if (test_fallido == 0) {
                 printf("✘ FALLA\n");
                 test_fallido = i+1;
-                break;
             }
         }
         
-        if (!test_cases[i].esperado[j] && !obtenido[j]) {
-            printf("✔ PASA\n");
-        } else if (test_fallido == 0) {
-            printf("✘ FALLA\n");
-            test_fallido = i+1;
-        }
-        
         // Liberar memoria
-        for (int k = 0; obtenido && obtenido[k]; k++) {
-            free(obtenido[k]);
+        if (obtenido) {
+            for (int k = 0; obtenido[k]; k++) {
+                free(obtenido[k]);
+            }
+            free(obtenido);
         }
-        free(obtenido);
     }
     
     return test_fallido;

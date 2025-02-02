@@ -22,5 +22,5 @@ int main()
 	}
 	free(b);
 
-    return 0;
+    return 1;
 }
