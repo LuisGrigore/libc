@@ -1,5 +1,13 @@
 #!/bin/bash
 
+current_dir=$(pwd)
+
+cd ..
+make
+make clean
+cd $current_dir
+
+
 # Ejecutar make
 make
 

@@ -1,37 +1,25 @@
+/* main_ft_atoi.c */
 #include <stdio.h>
+#include <stdlib.h>
 #include "libft.h"
-#include <limits.h>
-
-// Función para probar y comparar ft_atoi con atoi
-void test_ft_atoi() {
-    char *tests[] = {
-        "42",                     // Número positivo
-        "   -123",                // Número negativo con espacios iniciales
-        "+567",                   // Número con signo positivo
-        "42abc",                  // Número seguido de caracteres inválidos
-        "  00123",                // Número con ceros iniciales
-        "-2147483648",            // INT_MIN
-        "2147483647",             // INT_MAX
-        "9223372036854775807",    // Desbordamiento (debería dar INT_MAX)
-        "-9223372036854775808",   // Desbordamiento (debería dar INT_MIN)
-        "abc",                    // Cadena sin números (debería devolver 0)
-        "  -+123",                // Signo inválido (debería devolver 0)
-        "  123 456",              // Número con espacios en medio (debería tomar solo el primer número)
-        NULL                      // Fin de los casos de prueba
-    };
-
-    printf("Comparación entre ft_atoi y atoi:\n\n");
-
-    for (int i = 0; tests[i] != NULL; i++) {
-        printf("Test \"%s\":\n", tests[i]);
-        printf("  ft_atoi: %d\n", ft_atoi(tests[i]));
-        printf("  atoi   : %d\n", atoi(tests[i]));
-        printf("-------------------------\n");
-    }
-}
 
 int main() {
-    test_ft_atoi();
-	
-    return 0;
+    printf("Tests ft_atoi:\n");
+    int test_fallido = 0;
+    
+    const char *test_cases[] = {"42", "-42", "0", "2147483647", "-2147483648", "  123", "\t\n 456", "abc123", "123abc", "  -+42"};
+    
+    for (int i = 0; i < 10; i++) {
+        int esperado = atoi(test_cases[i]);
+        int obtenido = ft_atoi(test_cases[i]);
+        printf("Caso %d Convirtiendo \"%s\": ", i+1, test_cases[i]);
+        if (esperado == obtenido) {
+            printf("✔ PASA\n");
+        } else {
+            printf("✘ FALLA (Esperado: %d, Obtenido: %d)\n", esperado, obtenido);
+            if (test_fallido == 0) test_fallido = i+1;
+        }
+    }
+    
+    return test_fallido;
 }

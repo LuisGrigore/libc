@@ -1,29 +1,30 @@
-/* main_ft_strtrim.c */
+/* main_ft_substr.c */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "libft.h"
 
 int main() {
-    printf("Tests ft_strtrim:\n");
+    printf("Tests ft_substr:\n");
     int test_fallido = 0;
     
     struct {
-        const char *s1;
-        const char *set;
+        const char *s;
+        unsigned int start;
+        size_t len;
         const char *esperado;
     } test_cases[] = {
-        {"  Hola  ", " ", "Hola"},
-        {"xxTestxx", "x", "Test"},
-        {"--Trim--", "-", "Trim"},
-        {"NoTrim", "xyz", "NoTrim"},
-        {"", " ", ""},
-        {"     ", " ", ""}
+        {"Hola Mundo", 0, 4, "Hola"},
+        {"Hola Mundo", 5, 5, "Mundo"},
+        {"abcdef", 2, 3, "cde"},
+        {"1234567890", 7, 10, "890"},
+        {"pequeño", 20, 5, ""},
+        {"", 0, 5, ""}
     };
     
     for (int i = 0; i < 6; i++) {
-        char *obtenido = ft_strtrim(test_cases[i].s1, test_cases[i].set);
-        printf("Caso %d Recortando \"%s\" con \"%s\": ", i+1, test_cases[i].s1, test_cases[i].set);
+        char *obtenido = ft_substr(test_cases[i].s, test_cases[i].start, test_cases[i].len);
+        printf("Caso %d Substring de \"%s\" desde %u con longitud %zu: ", i+1, test_cases[i].s, test_cases[i].start, test_cases[i].len);
         
         if (strcmp(obtenido, test_cases[i].esperado) == 0) {
             printf("✔ PASA\n");
