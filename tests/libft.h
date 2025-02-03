@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 13:26:13 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/02/02 13:58:41 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:03:26 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ struct	SplitArray
 };
 
 int	ft_isalpha(int c);
+void	ft_bzero(void *s, size_t n);
 int	ft_isdigit(int c);
 int	ft_isalnum(int c);
 int	ft_isascii(int c);
