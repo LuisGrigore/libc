@@ -23,12 +23,14 @@ int main() {
         void *esperado = calloc(test_cases[i].nmemb, test_cases[i].size);
         void *obtenido = ft_calloc(test_cases[i].nmemb, test_cases[i].size);
         printf("Caso %d Allocando %zu elementos de tamaño %zu: ", i+1, test_cases[i].nmemb, test_cases[i].size);
+        
         if (memcmp(esperado, obtenido, test_cases[i].nmemb * test_cases[i].size) == 0) {
-            printf("✔ PASA\n");
+            printf("✔ PASA (Esperado: %p, Obtenido: %p)\n", esperado, obtenido);
         } else {
-            printf("✘ FALLA\n");
+            printf("✘ FALLA (Esperado: %p, Obtenido: %p)\n", esperado, obtenido);
             if (test_fallido == 0) test_fallido = i+1;
         }
+        
         free(esperado);
         free(obtenido);
     }

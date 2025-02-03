@@ -22,12 +22,13 @@ int main() {
     
     for (int i = 0; i < 5; i++) {
         char *obtenido = ft_strjoin(test_cases[i].s1, test_cases[i].s2);
-        printf("Caso %d Concatenando \"%s\" y \"%s\": ", i+1, test_cases[i].s1, test_cases[i].s2);
+        printf("Caso %d Concatenando \"%s\" y \"%s\":\n", i+1, test_cases[i].s1, test_cases[i].s2);
+        printf("  Esperado: %s, Obtenido: %s - ", test_cases[i].esperado, obtenido);
         
         if (strcmp(obtenido, test_cases[i].esperado) == 0) {
             printf("✔ PASA\n");
         } else {
-            printf("✘ FALLA (Esperado: \"%s\", Obtenido: \"%s\")\n", test_cases[i].esperado, obtenido);
+            printf("✘ FALLA\n");
             if (test_fallido == 0) test_fallido = i+1;
         }
         

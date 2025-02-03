@@ -17,18 +17,19 @@ int main() {
         {"abcdef", "abcdez", 5},
         {"12345", "123", 5},
         {"", "", 1},
-        {"abc", "abd", 2}
+        {"abc", "abd", 2},
+        {"aaa", "bbb", 3} // Caso con resultado negativo
     };
     
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 7; i++) {
         int esperado = strncmp(test_cases[i].s1, test_cases[i].s2, test_cases[i].n);
         int obtenido = ft_strncmp(test_cases[i].s1, test_cases[i].s2, test_cases[i].n);
-        printf("Caso %d Comparando \"%s\" y \"%s\" en los primeros %zu caracteres: ", 
-               i+1, test_cases[i].s1, test_cases[i].s2, test_cases[i].n);
+        printf("Caso %d Comparando \"%s\" y \"%s\" en los primeros %zu caracteres: Esperado: %d, Obtenido: %d - ", 
+               i+1, test_cases[i].s1, test_cases[i].s2, test_cases[i].n, esperado, obtenido);
         if ((esperado == 0 && obtenido == 0) || (esperado < 0 && obtenido < 0) || (esperado > 0 && obtenido > 0)) {
             printf("✔ PASA\n");
         } else {
-            printf("✘ FALLA (Esperado: %d, Obtenido: %d)\n", esperado, obtenido);
+            printf("✘ FALLA\n");
             if (test_fallido == 0) test_fallido = i+1;
         }
     }

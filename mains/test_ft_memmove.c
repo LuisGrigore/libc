@@ -8,12 +8,13 @@ int main() {
     int test_fallido = 0;
     
     char src[] = "Prueba memmove";
+	printf("Contenido de la memoria a mover: \"%s\"\n", src);
     char dest1[20] = {0}, dest2[20] = {0};
     
     memmove(dest1, src, 7);
     ft_memmove(dest2, src, 7);
     
-    printf("Caso 1 Copia parcial: ");
+    printf("Caso 1 Copia parcial: Esperado: %s, Obtenido: %s - ", dest1, dest2);
     if (memcmp(dest1, dest2, 7) == 0) {
         printf("✔ PASA\n");
     } else {
@@ -24,7 +25,7 @@ int main() {
     memmove(dest1, src, sizeof(src));
     ft_memmove(dest2, src, sizeof(src));
     
-    printf("Caso 2 Copia completa: ");
+    printf("Caso 2 Copia completa: Esperado: %s, Obtenido: %s - ", dest1, dest2);
     if (memcmp(dest1, dest2, sizeof(src)) == 0) {
         printf("✔ PASA\n");
     } else {
@@ -39,7 +40,7 @@ int main() {
     memmove(buffer1 + 5, buffer1, 10);
     ft_memmove(buffer2 + 5, buffer2, 10);
     
-    printf("Caso 3 Solapamiento: ");
+    printf("Caso 3 Solapamiento: Esperado: %s, Obtenido: %s - ", buffer1, buffer2);
     if (memcmp(buffer1, buffer2, sizeof(buffer1)) == 0) {
         printf("✔ PASA\n");
     } else {

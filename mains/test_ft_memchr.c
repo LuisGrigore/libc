@@ -23,12 +23,12 @@ int main() {
     for (int i = 0; i < 6; i++) {
         void *esperado = memchr(test_cases[i].data, test_cases[i].c, test_cases[i].n);
         void *obtenido = ft_memchr(test_cases[i].data, test_cases[i].c, test_cases[i].n);
-        printf("Caso %d Buscando '%c' en \"%s\" en los primeros %zu caracteres: ", 
-               i+1, test_cases[i].c, test_cases[i].data, test_cases[i].n);
+        printf("Caso %d Buscando '%c' en \"%s\" en los primeros %zu caracteres: Esperado: %p, Obtenido: %p - ", 
+               i+1, test_cases[i].c, test_cases[i].data, test_cases[i].n, esperado, obtenido);
         if (esperado == obtenido) {
             printf("✔ PASA\n");
         } else {
-            printf("✘ FALLA (Esperado: %p, Obtenido: %p)\n", esperado, obtenido);
+            printf("✘ FALLA\n");
             if (test_fallido == 0) test_fallido = i+1;
         }
     }

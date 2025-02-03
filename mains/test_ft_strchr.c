@@ -13,11 +13,11 @@ int main() {
     for (int i = 0; i < 5; i++) {
         char *esperado = strchr(test_cases[i], caracteres[i]);
         char *obtenido = ft_strchr(test_cases[i], caracteres[i]);
-        printf("Caso %d Buscando '%c' en \"%s\": ", i+1, caracteres[i], test_cases[i]);
+        printf("Caso %d Buscando '%c' en \"%s\": Esperado: %p, Obtenido: %p - ", i+1, caracteres[i], test_cases[i], (void*)esperado, (void*)obtenido);
         if (esperado == obtenido) {
             printf("✔ PASA\n");
         } else {
-            printf("✘ FALLA (Esperado: %p, Obtenido: %p)\n", (void*)esperado, (void*)obtenido);
+            printf("✘ FALLA\n");
             if (test_fallido == 0) test_fallido = i+1;
         }
     }

@@ -10,11 +10,11 @@ int main() {
     for (int i = 0; i <= 127; i++) {
         int res_original = isalnum(i);
         int res_mia = ft_isalnum(i);
-        printf("Caso %d Caracter '%c': ", i, i);
+        printf("Caso %d Caracter '%c': Esperado: %d, Obtenido: %d - ", i, i, res_original, res_mia);
         if ((res_original != 0 && res_mia != 0) || (res_original == 0 && res_mia == 0)) {
             printf("✔ PASA\n");
         } else {
-            printf("✘ FALLA (Esperado: %d, Obtenido: %d)\n", res_original, res_mia);
+            printf("✘ FALLA\n");
             if (test_fallido == 0) test_fallido = i;
         }
     }

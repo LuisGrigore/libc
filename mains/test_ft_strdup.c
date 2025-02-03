@@ -13,11 +13,13 @@ int main() {
     for (int i = 0; i < 5; i++) {
         char *esperado = strdup(test_cases[i]);
         char *obtenido = ft_strdup(test_cases[i]);
-        printf("Caso %d Duplicando \"%s\": ", i+1, test_cases[i]);
-        if (strcmp(esperado, obtenido) == 0) {
+        printf("Caso %d Duplicando \"%s\" (Dir: %p):\n", i+1, test_cases[i], (void*)test_cases[i]);
+        printf("  Esperado: %s (Dir: %p), Obtenido: %s (Dir: %p) - ", esperado, (void*)esperado, obtenido, (void*)obtenido);
+        
+        if (strcmp(esperado, obtenido) == 0 && esperado != obtenido) {
             printf("✔ PASA\n");
         } else {
-            printf("✘ FALLA (Esperado: %s, Obtenido: %s)\n", esperado, obtenido);
+            printf("✘ FALLA\n");
             if (test_fallido == 0) test_fallido = i+1;
         }
         free(esperado);

@@ -50,8 +50,8 @@ if [ "$1" == "run" ]; then
 			exit_code=$?
 
 			if [ $exit_code -ne 0 ]; then
-				echo "❌ $exec falló con código de estado $exit_code" >> results.txt
-				echo "❌ $exec falló con código de estado $exit_code"
+				echo "❌ $exec falló en el Caso $exit_code" >> results.txt
+				echo "❌ $exec falló en el Caso $exit_code"
 				((failed_tests++))
 				failed_list+=("$exec")
 			fi
