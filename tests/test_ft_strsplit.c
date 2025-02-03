@@ -1,4 +1,4 @@
-/* main_ft_split.c */
+ /* main_ft_split.c */
 #include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
@@ -12,8 +12,19 @@ void print_split_result(char **result) {
     for (int i = 0; result[i]; i++) {
         printf("\"%s\" ", result[i]);
     }
-    printf("\n");
 }
+
+void print_split_esperado(char *result[5]) {
+    if (!result) {
+        printf("NULL\n");
+        return;
+    }
+    for (int i = 0; result[i]; i++) {
+        printf("\"%s\" ", result[i]);
+    }
+}
+
+
 
 int main() {
     printf("Tests ft_split:\n");
@@ -22,7 +33,7 @@ int main() {
     struct {
         const char *s;
         char c;
-        const char *esperado[5];
+        char *esperado[5];
     } test_cases[] = {
         {"Hola Mundo", ' ', {"Hola", "Mundo", NULL}},
         {"123,456,789", ',', {"123", "456", "789", NULL}},
@@ -37,25 +48,29 @@ int main() {
         
         if (test_cases[i].s[0] == '\0') {
             if (obtenido == NULL) {
-                printf("✔ PASA\n");
+                printf("Esperado: (nil), Obtenido: %p - ✔ PASA\n", (void*)obtenido);
             } else {
-                printf("✘ FALLA (Esperado: NULL, Obtenido: %p)\n", (void*)obtenido);
+                printf("Esperado: (nil), Obtenido: %p - ✘ FALLA\n", (void*)obtenido);
                 if (test_fallido == 0) test_fallido = i+1;
             }
         } else {
+			printf("Esperado: ");
+			print_split_esperado(test_cases[i].esperado);
+			printf("Obtenido: ");
+			print_split_result(obtenido);
             int j;
             for (j = 0; test_cases[i].esperado[j] && obtenido[j]; j++) {
                 if (strcmp(test_cases[i].esperado[j], obtenido[j]) != 0) {
-                    printf("✘ FALLA\n");
+					printf(" - ✘ FALLA\n");
                     test_fallido = i+1;
                     break;
                 }
             }
             
             if (!test_cases[i].esperado[j] && !obtenido[j]) {
-                printf("✔ PASA\n");
+                printf(" - ✔ PASA\n");
             } else if (test_fallido == 0) {
-                printf("✘ FALLA\n");
+                printf(" - ✘ FALLA\n");
                 test_fallido = i+1;
             }
         }

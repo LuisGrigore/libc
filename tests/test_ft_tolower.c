@@ -12,9 +12,9 @@ int main() {
         int res_mia = ft_tolower(i);
         printf("Caso %d Caracter '%c': ", i, i);
         if (res_original == res_mia) {
-            printf("✔ PASA\n");
+            printf("Esperado: %c, Obtenido: %c - ✔ PASA\n", res_original, res_mia);
         } else {
-            printf("✘ FALLA (Esperado: %d, Obtenido: %d)\n", res_original, res_mia);
+            printf("Esperado: %c, Obtenido: %c - ✘ FALLA\n", res_original, res_mia);
             if (test_fallido == 0) test_fallido = i;
         }
     }
