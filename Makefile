@@ -2,7 +2,7 @@
 NAME = libft.a
 
 # Buscar automáticamente todos los archivos .c en el directorio
-SRCS = $(wildcard *.c)
+SRCS = $(wildcard ft_*.c)
 
 # Generar los archivos .o correspondientes
 OBJS = $(SRCS:.c=.o)
