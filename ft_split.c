@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:49:23 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/02/02 15:25:25 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/02/03 13:01:21 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,11 @@ char	**ft_split(char const *s, char c)
 	struct StringExtractor	se;
 	struct SplitArray		split_array;
 	char					*substring;
-	if (!s || *s == '\0')  // Verifica si s es NULL o una cadena vacía
-        return NULL;
+
+	if (!s || *s == '\0')
+	{
+		return (NULL);
+	}
 	se = string_extractor_init(s);
 	split_array.array = NULL;
 	split_array.size = 0;
