@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:28:27 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/02/04 14:34:45 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/02/05 21:08:14 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s)
 	{
-		return;
+		return ;
 	}
 	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
