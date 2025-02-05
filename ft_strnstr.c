@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:12:02 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/02/03 13:14:44 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/02/05 12:18:12 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			&& big[j + i] == little[i])
 		{
 			i++;
-			if (i + j == len)
-			{
-			}
 		}
 		if (little[i] == '\0')
 		{
 			return ((char *)&big[j]);
 		}
+		j++;
 	}
 	return (NULL);
 }
