@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:02:46 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/02/03 13:04:14 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/02/05 12:53:19 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ char	*ft_strdup(const char *s)
 	char	*new_str;
 	int		i;
 
-	if (!s)
+	/*if (!s)
 	{
 		return (NULL);
-	}
+	}*/
 	new_str = (char *)ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	if (!new_str)
 	{

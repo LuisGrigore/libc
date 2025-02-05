@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 13:15:36 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/02/03 12:59:27 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/02/05 12:50:04 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	*ft_memset(void *v, int c, size_t s)
 {
 	unsigned char	*str;
 
-	if (!v)
+	/*if (!v)
 	{
 		return (NULL);
-	}
+	}*/
 	str = (unsigned char *)v;
 	while (s--)
 	{
