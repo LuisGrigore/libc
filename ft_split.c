@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:49:23 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/02/05 21:33:54 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/02/06 16:05:06 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,23 @@ static char	*word_dup(const char *s, int start, int end)
 	return (word);
 }
 
+void	init_index(int *i, int *j, int *k)
+{
+	*i = 0;
+	*j = 0;
+	*k = 0;
+}
+
+char	**checks_init_result(char const *s, char c)
+{
+	char	**result;
+
+	if (!s)
+		return (NULL);
+	result = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+	return (result);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
@@ -58,14 +75,10 @@ char	**ft_split(char const *s, char c)
 	int		j;
 	int		k;
 
-	if (!s)
-		return (NULL);
-	result = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+	result = checks_init_result(s, c);
 	if (!result)
 		return (NULL);
-	i = 0;
-	j = 0;
-	k = 0;
+	init_index(&i, &j, &k);
 	while (s[i])
 	{
 		if (s[i] != c)

@@ -1,40 +1,39 @@
 
-gcc -Wall -Wextra -Werror -c ft_atoi.c -o ft_atoi.o
-gcc -Wall -Wextra -Werror -c ft_bzero.c -o ft_bzero.o
-gcc -Wall -Wextra -Werror -c ft_calloc.c -o ft_calloc.o
-gcc -Wall -Wextra -Werror -c ft_isalnum.c -o ft_isalnum.o
-gcc -Wall -Wextra -Werror -c ft_isalpha.c -o ft_isalpha.o
-gcc -Wall -Wextra -Werror -c ft_isascii.c -o ft_isascii.o
-gcc -Wall -Wextra -Werror -c ft_isdigit.c -o ft_isdigit.o
-gcc -Wall -Wextra -Werror -c ft_isprint.c -o ft_isprint.o
-gcc -Wall -Wextra -Werror -c ft_itoa.c -o ft_itoa.o
-gcc -Wall -Wextra -Werror -c ft_memchr.c -o ft_memchr.o
-gcc -Wall -Wextra -Werror -c ft_memcmp.c -o ft_memcmp.o
-gcc -Wall -Wextra -Werror -c ft_memcpy.c -o ft_memcpy.o
-gcc -Wall -Wextra -Werror -c ft_memmove.c -o ft_memmove.o
-gcc -Wall -Wextra -Werror -c ft_memset.c -o ft_memset.o
-gcc -Wall -Wextra -Werror -c ft_putchar_fd.c -o ft_putchar_fd.o
-gcc -Wall -Wextra -Werror -c ft_putendl_fd.c -o ft_putendl_fd.o
-gcc -Wall -Wextra -Werror -c ft_putnbr_fd.c -o ft_putnbr_fd.o
-gcc -Wall -Wextra -Werror -c ft_putstr_fd.c -o ft_putstr_fd.o
-gcc -Wall -Wextra -Werror -c ft_split.c -o ft_split.o
-gcc -Wall -Wextra -Werror -c ft_strchr.c -o ft_strchr.o
-gcc -Wall -Wextra -Werror -c ft_strdup.c -o ft_strdup.o
-gcc -Wall -Wextra -Werror -c ft_strjoin.c -o ft_strjoin.o
-gcc -Wall -Wextra -Werror -c ft_strlcat.c -o ft_strlcat.o
-gcc -Wall -Wextra -Werror -c ft_strlcpy.c -o ft_strlcpy.o
-gcc -Wall -Wextra -Werror -c ft_strlen.c -o ft_strlen.o
-gcc -Wall -Wextra -Werror -c ft_strncmp.c -o ft_strncmp.o
-gcc -Wall -Wextra -Werror -c ft_strnstr.c -o ft_strnstr.o
-gcc -Wall -Wextra -Werror -c ft_strrchr.c -o ft_strrchr.o
-gcc -Wall -Wextra -Werror -c ft_strtrim.c -o ft_strtrim.o
-gcc -Wall -Wextra -Werror -c ft_substr.c -o ft_substr.o
-gcc -Wall -Wextra -Werror -c ft_tolower.c -o ft_tolower.o
-gcc -Wall -Wextra -Werror -c ft_toupper.c -o ft_toupper.o
-ar rcs libft.a ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_itoa.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o
-✅ Librería libft.a creada con éxito.
-rm -f ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_itoa.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o
-🧹 Archivos objeto eliminados.
+gcc -Wall -Wextra -Werror -c -o ft_memset.o ft_memset.c
+gcc -Wall -Wextra -Werror -c -o ft_bzero.o ft_bzero.c
+gcc -Wall -Wextra -Werror -c -o ft_strlen.o ft_strlen.c
+gcc -Wall -Wextra -Werror -c -o ft_atoi.o ft_atoi.c
+gcc -Wall -Wextra -Werror -c -o ft_isdigit.o ft_isdigit.c
+gcc -Wall -Wextra -Werror -c -o ft_isalpha.o ft_isalpha.c
+gcc -Wall -Wextra -Werror -c -o ft_isprint.o ft_isprint.c
+gcc -Wall -Wextra -Werror -c -o ft_isascii.o ft_isascii.c
+gcc -Wall -Wextra -Werror -c -o ft_isalnum.o ft_isalnum.c
+gcc -Wall -Wextra -Werror -c -o ft_memchr.o ft_memchr.c
+gcc -Wall -Wextra -Werror -c -o ft_memcpy.o ft_memcpy.c
+gcc -Wall -Wextra -Werror -c -o ft_memcmp.o ft_memcmp.c
+gcc -Wall -Wextra -Werror -c -o ft_memmove.o ft_memmove.c
+gcc -Wall -Wextra -Werror -c -o ft_strchr.o ft_strchr.c
+gcc -Wall -Wextra -Werror -c -o ft_strdup.o ft_strdup.c
+gcc -Wall -Wextra -Werror -c -o ft_strlcat.o ft_strlcat.c
+gcc -Wall -Wextra -Werror -c -o ft_strlcpy.o ft_strlcpy.c
+gcc -Wall -Wextra -Werror -c -o ft_strncmp.o ft_strncmp.c
+gcc -Wall -Wextra -Werror -c -o ft_toupper.o ft_toupper.c
+gcc -Wall -Wextra -Werror -c -o ft_tolower.o ft_tolower.c
+gcc -Wall -Wextra -Werror -c -o ft_strnstr.o ft_strnstr.c
+gcc -Wall -Wextra -Werror -c -o ft_strrchr.o ft_strrchr.c
+gcc -Wall -Wextra -Werror -c -o ft_calloc.o ft_calloc.c
+gcc -Wall -Wextra -Werror -c -o ft_putchar_fd.o ft_putchar_fd.c
+gcc -Wall -Wextra -Werror -c -o ft_putstr_fd.o ft_putstr_fd.c
+gcc -Wall -Wextra -Werror -c -o ft_putnbr_fd.o ft_putnbr_fd.c
+gcc -Wall -Wextra -Werror -c -o ft_putendl_fd.o ft_putendl_fd.c
+gcc -Wall -Wextra -Werror -c -o ft_substr.o ft_substr.c
+gcc -Wall -Wextra -Werror -c -o ft_strjoin.o ft_strjoin.c
+gcc -Wall -Wextra -Werror -c -o ft_strtrim.o ft_strtrim.c
+gcc -Wall -Wextra -Werror -c -o ft_strmapi.o ft_strmapi.c
+gcc -Wall -Wextra -Werror -c -o ft_itoa.o ft_itoa.c
+gcc -Wall -Wextra -Werror -c -o ft_split.o ft_split.c
+ar rcs libft.a ft_memset.o ft_bzero.o ft_strlen.o ft_atoi.o ft_isdigit.o ft_isalpha.o ft_isprint.o ft_isascii.o ft_isalnum.o ft_memchr.o ft_memcpy.o ft_memcpy.o ft_memcmp.o ft_memmove.o ft_strchr.o ft_strdup.o ft_strlcat.o ft_strlcpy.o ft_strncmp.o ft_toupper.o ft_tolower.o ft_strnstr.o ft_strrchr.o ft_calloc.o ft_putchar_fd.o ft_putstr_fd.o ft_putnbr_fd.o ft_putendl_fd.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_strmapi.o ft_itoa.o ft_split.o
+rm -f ft_memset.o ft_bzero.o ft_strlen.o ft_atoi.o ft_isdigit.o ft_isalpha.o ft_isprint.o ft_isascii.o ft_isalnum.o ft_memchr.o ft_memcpy.o ft_memcpy.o ft_memcmp.o ft_memmove.o ft_strchr.o ft_strdup.o ft_strlcat.o ft_strlcpy.o ft_strncmp.o ft_toupper.o ft_tolower.o ft_strnstr.o ft_strrchr.o ft_calloc.o ft_putchar_fd.o ft_putstr_fd.o ft_putnbr_fd.o ft_putendl_fd.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_strmapi.o ft_itoa.o ft_split.o ft_lstnew_bonus.o ft_lstadd_front_bonus.o ft_lstsize_bonus.o ft_lstlast_bonus.o ft_lstadd_back_bonus.o ft_lstdelone_bonus.o ft_lstclear_bonus.o ft_lstiter_bonus.o ft_lstmap_bonus.o
 gcc -Wall -Wextra -Werror test_ft_atoi.c -o test_ft_atoi.out -L. ../libft.a  
 ✅ Ejecutable test_ft_atoi.out creado.
 gcc -Wall -Wextra -Werror test_ft_bzero.c -o test_ft_bzero.out -L. ../libft.a  
@@ -142,11 +141,11 @@ test_ft_bzero.out finalizado.
 
 Ejecutando test_ft_calloc.out...
 Tests ft_calloc:
-Caso 1 Allocando 5 elementos de tamaño 4: ✔ PASA (Esperado: 0x56520933a2b0, Obtenido: 0x56520933a2d0)
-Caso 2 Allocando 10 elementos de tamaño 1: ✔ PASA (Esperado: 0x56520933a2f0, Obtenido: 0x56520933a2d0)
-Caso 3 Allocando 0 elementos de tamaño 4: ✔ PASA (Esperado: 0x56520933a310, Obtenido: 0x56520933a2d0)
-Caso 4 Allocando 3 elementos de tamaño 8: ✔ PASA (Esperado: 0x56520933a330, Obtenido: 0x56520933a2d0)
-Caso 5 Allocando 100 elementos de tamaño 2: ✔ PASA (Esperado: 0x56520933a350, Obtenido: 0x56520933a420)
+Caso 1 Allocando 5 elementos de tamaño 4: ✔ PASA (Esperado: 0x60f77a0c52b0, Obtenido: 0x60f77a0c52d0)
+Caso 2 Allocando 10 elementos de tamaño 1: ✔ PASA (Esperado: 0x60f77a0c52f0, Obtenido: 0x60f77a0c52d0)
+Caso 3 Allocando 0 elementos de tamaño 4: ✔ PASA (Esperado: 0x60f77a0c5310, Obtenido: 0x60f77a0c52d0)
+Caso 4 Allocando 3 elementos de tamaño 8: ✔ PASA (Esperado: 0x60f77a0c5330, Obtenido: 0x60f77a0c52d0)
+Caso 5 Allocando 100 elementos de tamaño 2: ✔ PASA (Esperado: 0x60f77a0c5350, Obtenido: 0x60f77a0c5420)
 ✅ test_ft_calloc.out aprobó.
 test_ft_calloc.out finalizado.
 
@@ -841,12 +840,12 @@ test_ft_itoa.out finalizado.
 
 Ejecutando test_ft_memchr.out...
 Tests ft_memchr:
-Caso 1 Buscando 'M' en "Hola Mundo" en los primeros 10 caracteres: Esperado: 0x7fff734b2dc5, Obtenido: 0x7fff734b2dc5 - ✔ PASA
-Caso 2 Buscando '5' en "1234567890" en los primeros 10 caracteres: Esperado: 0x7fff734b2de4, Obtenido: 0x7fff734b2de4 - ✔ PASA
+Caso 1 Buscando 'M' en "Hola Mundo" en los primeros 10 caracteres: Esperado: 0x7ffcd78c1125, Obtenido: 0x7ffcd78c1125 - ✔ PASA
+Caso 2 Buscando '5' en "1234567890" en los primeros 10 caracteres: Esperado: 0x7ffcd78c1144, Obtenido: 0x7ffcd78c1144 - ✔ PASA
 Caso 3 Buscando 'z' en "abcdef" en los primeros 6 caracteres: Esperado: (nil), Obtenido: (nil) - ✔ PASA
 Caso 4 Buscando 'm' en "Prueba memchr" en los primeros 5 caracteres: Esperado: (nil), Obtenido: (nil) - ✔ PASA
 Caso 5 Buscando 'a' en "" en los primeros 1 caracteres: Esperado: (nil), Obtenido: (nil) - ✔ PASA
-Caso 6 Buscando 'a' en "aaaaaa" en los primeros 3 caracteres: Esperado: 0x7fff734b2e60, Obtenido: 0x7fff734b2e60 - ✔ PASA
+Caso 6 Buscando 'a' en "aaaaaa" en los primeros 3 caracteres: Esperado: 0x7ffcd78c11c0, Obtenido: 0x7ffcd78c11c0 - ✔ PASA
 ✅ test_ft_memchr.out aprobó.
 test_ft_memchr.out finalizado.
 
@@ -949,10 +948,10 @@ test_ft_putstr_fd.out finalizado.
 
 Ejecutando test_ft_strchr.out...
 Tests ft_strchr:
-Caso 1 Buscando 'a' en "Hola Mundo": Esperado: 0x55e9b883e01c, Obtenido: 0x55e9b883e01c - ✔ PASA
-Caso 2 Buscando '1' en "1234567890": Esperado: 0x55e9b883e024, Obtenido: 0x55e9b883e024 - ✔ PASA
+Caso 1 Buscando 'a' en "Hola Mundo": Esperado: 0x602598eeb01c, Obtenido: 0x602598eeb01c - ✔ PASA
+Caso 2 Buscando '1' en "1234567890": Esperado: 0x602598eeb024, Obtenido: 0x602598eeb024 - ✔ PASA
 Caso 3 Buscando 'z' en "abcdef": Esperado: (nil), Obtenido: (nil) - ✔ PASA
-Caso 4 Buscando ' ' en "": Esperado: 0x55e9b883e036, Obtenido: 0x55e9b883e036 - ✔ PASA
+Caso 4 Buscando ' ' en "": Esperado: 0x602598eeb036, Obtenido: 0x602598eeb036 - ✔ PASA
 Caso 5 Buscando 'o' en "aaaaa": Esperado: (nil), Obtenido: (nil) - ✔ PASA
 ✅ test_ft_strchr.out aprobó.
 test_ft_strchr.out finalizado.
@@ -961,16 +960,16 @@ test_ft_strchr.out finalizado.
 
 Ejecutando test_ft_strdup.out...
 Tests ft_strdup:
-Caso 1 Duplicando "Hola" (Dir: 0x55eb7d02e019):
-  Esperado: Hola (Dir: 0x55eb92be62b0), Obtenido: Hola (Dir: 0x55eb92be62d0) - ✔ PASA
-Caso 2 Duplicando "" (Dir: 0x55eb7d02e01e):
-  Esperado:  (Dir: 0x55eb92be62d0), Obtenido:  (Dir: 0x55eb92be62b0) - ✔ PASA
-Caso 3 Duplicando "1234567890" (Dir: 0x55eb7d02e01f):
-  Esperado: 1234567890 (Dir: 0x55eb92be62b0), Obtenido: 1234567890 (Dir: 0x55eb92be62d0) - ✔ PASA
-Caso 4 Duplicando "abcdef" (Dir: 0x55eb7d02e02a):
-  Esperado: abcdef (Dir: 0x55eb92be62d0), Obtenido: abcdef (Dir: 0x55eb92be62b0) - ✔ PASA
-Caso 5 Duplicando "Muy larga cadena de prueba" (Dir: 0x55eb7d02e031):
-  Esperado: Muy larga cadena de prueba (Dir: 0x55eb92be62f0), Obtenido: Muy larga cadena de prueba (Dir: 0x55eb92be6320) - ✔ PASA
+Caso 1 Duplicando "Hola" (Dir: 0x5b7fbb4fc019):
+  Esperado: Hola (Dir: 0x5b7fe72b82b0), Obtenido: Hola (Dir: 0x5b7fe72b82d0) - ✔ PASA
+Caso 2 Duplicando "" (Dir: 0x5b7fbb4fc01e):
+  Esperado:  (Dir: 0x5b7fe72b82d0), Obtenido:  (Dir: 0x5b7fe72b82b0) - ✔ PASA
+Caso 3 Duplicando "1234567890" (Dir: 0x5b7fbb4fc01f):
+  Esperado: 1234567890 (Dir: 0x5b7fe72b82b0), Obtenido: 1234567890 (Dir: 0x5b7fe72b82d0) - ✔ PASA
+Caso 4 Duplicando "abcdef" (Dir: 0x5b7fbb4fc02a):
+  Esperado: abcdef (Dir: 0x5b7fe72b82d0), Obtenido: abcdef (Dir: 0x5b7fe72b82b0) - ✔ PASA
+Caso 5 Duplicando "Muy larga cadena de prueba" (Dir: 0x5b7fbb4fc031):
+  Esperado: Muy larga cadena de prueba (Dir: 0x5b7fe72b82f0), Obtenido: Muy larga cadena de prueba (Dir: 0x5b7fe72b8320) - ✔ PASA
 ✅ test_ft_strdup.out aprobó.
 test_ft_strdup.out finalizado.
 
@@ -1069,8 +1068,8 @@ Caso 1 Separando "Hola Mundo" por ' ': Esperado: "Hola" "Mundo" Obtenido: "Hola"
 Caso 2 Separando "123,456,789" por ',': Esperado: "123" "456" "789" Obtenido: "123" "456" "789"  - ✔ PASA
 Caso 3 Separando "abc--def--ghi" por '-': Esperado: "abc" "def" "ghi" Obtenido: "abc" "def" "ghi"  - ✔ PASA
 Caso 4 Separando "sin_delimitador" por 'x': Esperado: "sin_delimitador" Obtenido: "sin_delimitador"  - ✔ PASA
-Caso 5 Separando "" por ' ': Esperado: (nil), Obtenido: (nil) - ✔ PASA
-✅ test_ft_strsplit.out aprobó.
+Caso 5 Separando "" por ' ': Esperado: (nil), Obtenido: 0x64e9d2d9b2b0 - ✘ FALLA
+❌ test_ft_strsplit.out falló en el Caso 5
 test_ft_strsplit.out finalizado.
 
 
@@ -1415,10 +1414,12 @@ test_ft_toupper.out finalizado.
 
 rm -f test_ft_atoi.out test_ft_bzero.out test_ft_calloc.out test_ft_isalnum.out test_ft_isalpha.out test_ft_isascii.out test_ft_isprint.out test_ft_itoa.out test_ft_memchr.out test_ft_memcmp.out test_ft_memcpy.out test_ft_memmove.out test_ft_memset.out test_ft_putchar_fd.out test_ft_putendl.out test_ft_putnbr_fd.out test_ft_putstr_fd.out test_ft_strchr.out test_ft_strdup.out test_ft_strjoin.out test_ft_strlcpy.out test_ft_strlen.out test_ft_strncmp.out test_ft_strnstr.out test_ft_strrchr.out test_ft_strsplit.out test_ft_strtrim.out test_ft_substr.out test_ft_tolower.out test_ft_toupper.out
 🧹 Ejecutables eliminados.
-Tests fallados: 0
+Tests fallados: 1
+Lista de tests fallados:
+  - test_ft_strsplit.out
 
 
-Tests aprobados: 30
+Tests aprobados: 29
 Lista de tests aprobados:
   - test_ft_atoi.out
   - test_ft_bzero.out
@@ -1445,7 +1446,6 @@ Lista de tests aprobados:
   - test_ft_strncmp.out
   - test_ft_strnstr.out
   - test_ft_strrchr.out
-  - test_ft_strsplit.out
   - test_ft_strtrim.out
   - test_ft_substr.out
   - test_ft_tolower.out

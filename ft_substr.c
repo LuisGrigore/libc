@@ -6,28 +6,41 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 13:21:18 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/02/05 21:29:30 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/02/06 09:40:05 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	checks(char const *s, unsigned int start, size_t len)
+{
+	if (!s)
+	{
+		return (-1);
+	}
+	if (start > ft_strlen(s))
+	{
+		return (0);
+	}
+	if (len > ft_strlen(s) - start)
+	{
+		return (ft_strlen(s) - start);
+	}
+	return (len);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	i;
 
-	if (!s)
+	if (checks(s, start, len) == -1)
 	{
 		return (NULL);
 	}
-	if (start > ft_strlen(s))
+	else
 	{
-		len = 0;
-	}
-	if (len > ft_strlen(s) - start)
-	{
-		len = ft_strlen(s) - start;
+		len = checks(s, start, len);
 	}
 	str = (char *)malloc(sizeof(*s) * (len + 1));
 	if (!str)
